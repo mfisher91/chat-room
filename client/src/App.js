@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Grommet, Box, Sidebar, Nav, Button } from 'grommet';
+import { Home as HomeIcon } from 'grommet-icons';
+import Home from './views/Home';
 import './App.css';
 
 function App() {
+  const [view, setView] = useState('home');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grommet full>
+      <Box direction="row" fill>
+        <Sidebar background="brand">
+          <Nav gap="small">
+            <Button icon={<HomeIcon />} hoverIndicator onClick={() => setView('home')} />
+          </Nav>
+        </Sidebar>
+        {
+          view === 'home' && <Home />
+        }
+      </Box>
+    </Grommet>
   );
 }
 
