@@ -7,10 +7,8 @@ To Do:
 - [X] Create home view
     - [X] Basic website design
     - [X] List of your open conversations
-- [ ] Create add friend view
-    - [ ] Search for contacts 
-    - [ ] Add new contact 
-- [ ] Create menu option to start new chat 
+- [X] Create start conversation view
+- [X] Create menu option to start new chat 
 - [ ] Create message view
 - [ ] Create basic express app
 - [ ] Create endpoint for getting users 
