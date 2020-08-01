@@ -4,9 +4,9 @@ An app to send messages to other people.
 
 To Do:
 
-- [ ] Create home view
-    - [ ] Basic website design
-    - [ ] List of your open conversations
+- [X] Create home view
+    - [X] Basic website design
+    - [X] List of your open conversations
 - [ ] Create add friend view
     - [ ] Search for contacts 
     - [ ] Add new contact 

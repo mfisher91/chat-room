@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Grommet, Box, Sidebar, Nav, Button } from 'grommet';
 import { Home as HomeIcon } from 'grommet-icons';
-import Home from './views/Home';
+import Home from './views/home';
 import './App.css';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           </Nav>
         </Sidebar>
         {
-          view === 'home' && <Home />
+          view === 'home' && <Home user="Maris" />
         }
       </Box>
     </Grommet>
