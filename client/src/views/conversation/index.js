@@ -16,7 +16,7 @@ const ConversationView = ({ person }) => {
   const [newMessage, setNewMessage] = useState();
 
   const sendMessage = () => {
-    if(newMessage !== '') {
+    if(newMessage && newMessage.message !== undefined && newMessage.message !== '') {
       setMessages([...messages, newMessage]);
       setNewMessage('');
     }
@@ -28,7 +28,7 @@ const ConversationView = ({ person }) => {
       <Box align='center' fill="horizontal">
         {
           messages.length > 0 && messages.map(({ message, from, sentOn}) => (
-            <Box alignSelf={from === 0 ? 'end' : 'start'} pad="medium">
+            <Box alignSelf={from === 0 ? 'end' : 'start'} pad="medium" key={message}>
               <p>{message}</p>
               <span>{sentOn}</span>
             </Box>
@@ -37,8 +37,9 @@ const ConversationView = ({ person }) => {
         <Box direction="row" gap="medium" fill="horizontal" pad="medium">
           <TextInput 
             name="yourMessage" 
-            onChange={(e) => setNewMessage({ message: e.target.value, from: 0, sentOn: setDate() })} 
-            value={newMessage && newMessage.message || ''} 
+            onChange={(e) => setNewMessage({ message: e.target.value, from: 0, sentOn: setDate() })}
+            value={newMessage && newMessage.message || ''}
+            aria-label="your-message" 
           />
           <Button 
             label="Send" 
