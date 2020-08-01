@@ -10,7 +10,7 @@ To Do:
 - [X] Create start conversation view
 - [X] Create menu option to start new chat 
 - [X] Create message view
-- [ ] Create basic express app
+- [X] Create basic express app
 - [ ] Create endpoint for getting users 
     - [ ] Link to front end
 - [ ] Create endpoint for getting open conversations
