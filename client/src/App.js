@@ -6,15 +6,15 @@ import CreateConversationView from './views/create-conversation';
 import './App.css';
 
 function App() {
-  const [view, setView] = useState(<Home user="Maris" />);
+  const [view, setView] = useState();
 
   return (
     <Grommet full>
       <Box direction="row" fill>
         <Sidebar background="brand">
           <Nav gap="small">
-            <Button icon={<HomeIcon />} hoverIndicator onClick={() => setView(<Home user="Maris" />)} />
-            <Button icon={<UserNew />} hoverIndicator onClick={() => setView(<CreateConversationView />)} />
+            <Button icon={<HomeIcon />} hoverIndicator onClick={() => setView(<Home user="Maris" setView={setView} />)} />
+            <Button icon={<UserNew />} hoverIndicator onClick={() => setView(<CreateConversationView setView={setView} />)} />
           </Nav>
         </Sidebar>
         {view}
